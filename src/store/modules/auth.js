@@ -16,6 +16,7 @@ const actions = {
     login: () => {
         api.login();
     },
+    // 'commit' là 1 func đặc biệt dùng để gọi mutation
     finalizeLogin({ commit }, hash) {
         const queryObj = qs.parse(hash.replace('#', ''));
 
