@@ -23,7 +23,7 @@ const actions = {
 
         window.localStorage.setItem('imgur_token', queryObj.access_token);
 
-        // - Không dùng window.location = <<url>> vì sẽ reload lại trang ---> dùng Vue Router (biến 'router' ở dưới là obj được import vô từ main.js)
+        // - Không dùng window.location = <<url>> vì sẽ reload lại trang ---> dùng Vue Router (biến 'router' ở dưới là obj đặc biệt được import vô từ main.js)
         router.push('/');
     },
     logout: ({ commit }) => {

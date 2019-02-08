@@ -1,15 +1,19 @@
 <template>
     <div class="ui secondary pointing menu">
-        <a href="/" class="item active">
+        <router-link to="/" class="item active">
             Image Storage   
-        </a>
+        </router-link>
         
         <div class="right menu">
             <div v-if="isLoggedIn" class="horizontal">
-                <a class="item" href="">Galleries</a>
-                <a class="item" href="">Upload</a>
+                <!-- Dùng router-link để navigate (đc provide bởi Vue Router), ko dùng thẻ a, vì sẽ reload lại toàn bộ trang -->
+                <router-link to="/" class="item">Galleries</router-link>
+                <router-link to="/upload" class="item">Upload</router-link>
+
+                <!-- Logout ko cần đổi qua router-link, vì nó ko có chuyển trang đi đâu cả. -->
                 <a class="item" @click="logout">Logout</a>       
             </div>
+            <!-- Login ko cần đổi qua router-link, vì nó cần chuyển trang ra bên ngoài app của mình, đi qua imgur. -->
             <a v-else class="ui item" @click="login">Login</a>
         </div>
     </div>

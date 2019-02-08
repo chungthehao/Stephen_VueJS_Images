@@ -14,6 +14,7 @@ export default {
             response_type: 'token'
         };
 
+        // Đẩy người dùng đi login (bằng API của Imgur)
         window.location = `${ROOT_URL}/oauth2/authorize?${qs.stringify(querystring)}`;
     }
 };
