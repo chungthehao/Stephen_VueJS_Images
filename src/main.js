@@ -7,7 +7,8 @@ import AuthHandler from './components/AuthHandler';
 Vue.use(VueRouter); // thiết lập kết nối, handshake
 
 // Liệt kê các route có trong app mình
-const router = new VueRouter({
+export const router = new VueRouter({ // 'router' object được dùng để navigate user in our app
+    mode: 'history', // cấu hình browser router (thay vì để mặc định là hash router)
     routes: [
         { path: '/oauth2/callback', component: AuthHandler }
     ]
